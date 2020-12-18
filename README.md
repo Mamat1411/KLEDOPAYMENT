@@ -1,4 +1,4 @@
-KLEDO PAYMENT
+KLEDO PAYMENT<br>
 Langkah-langkah instalasi:
 1. Install laravel baik secara global maupun langsung dari server
 2. Jalankan bash yang ada pada PC masing-masing
