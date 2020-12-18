@@ -19,6 +19,12 @@
                 <table class="table table-striped table-hover table-responsive">
                     <thead class="table-dark">
                         <tr>
+                            <th scope="col">                                
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Select All
+                                </label>
+                            </th>
                             <th scope="col">ID</th>
                             <th scope="col">Customer ID</th>
                             <th scope="col">Payment Name</th>
@@ -28,6 +34,9 @@
                         <tbody>
                             @foreach ($payment as $py)
                                 <tr>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="{{ $py->id }}" id="flexCheckDefault" name="payment[]">
+                                    </td>
                                     <td scope="row">{{ $py -> id }}</td>
                                     <td>{{ $py -> customer_id }}</td>
                                     <td>{{ $py -> payment_name }}</td>
@@ -37,13 +46,19 @@
                                         <form action="/payment/{{ $py -> id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger">Delete</button>                            
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>                                
-                            @endforeach
-                        </tbody>
-                </table>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        {{-- <form action="/payment/{{ $payment->id }}" method="POST">
+                            @method('deleteAll')
+                            @csrf
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form> --}}
             </div>
         </div>
     </div>

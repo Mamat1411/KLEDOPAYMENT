@@ -22,7 +22,8 @@ Route::get('/payment', 'PaymentController@index');
 
 //Payment CRUD Operation
 Route::get('/payment/create', 'PaymentController@create');
-Route:: post('/payment', 'PaymentController@store');
-Route:: delete('/payment/{payment}', 'PaymentController@destroy');
-Route:: get('/payment/{payment}/edit', 'PaymentController@edit');
-Route:: patch('/payment/{payment}', 'PaymentController@update');
+Route::post('/payment', 'PaymentController@store');
+Route::delete('/payment/{payment}', 'PaymentController@destroy');
+Route::get('/payment/{payment}/edit', 'PaymentController@edit');
+Route::patch('/payment/{payment}', 'PaymentController@update');
+// Route::deleteAll('/payment/{payment}', 'PaymentController@deleteAll')->name('deleteAll');

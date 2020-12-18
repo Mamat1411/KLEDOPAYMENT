@@ -112,4 +112,10 @@ class PaymentController extends Controller
         Payment::destroy($payment->id);
         return redirect('/payment') -> with('status', 'Payment Data Deleted Successfully');
     }
+
+    public function deleteAll(Request $request)
+    {
+        Payment::whereIn('id', $request->input('payment'))->delete();
+        return redirect('/payment') -> with('status', 'Payment Data Deleted Successfully');        
+    }
 }
